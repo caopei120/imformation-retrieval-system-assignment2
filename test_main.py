@@ -155,6 +155,7 @@ def test_delete_buffer():
     print("\nresponse------------------------>" + response.text)
 
 
+# In assignment1, I used mac, here I used window11
 dir_path = 'D:/test_caopei'
 binary_file = '/cp.bin'
 log_text_file = '/cp.log'
