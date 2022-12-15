@@ -1,5 +1,8 @@
 import requests
 
+# In assignment1, I used mac, here I used window11
+dir_path = 'D:/test_caopei'
+
 
 def test_create_dir():
     # 返回接口响应结果
@@ -29,6 +32,9 @@ def test_delete_dir():
     }
     response = requests.delete(url=url, json=payload)
     print("\nresponse------------------------>" + response.text)
+
+
+binary_file = '/cp.bin'
 
 
 def test_create_binary():
@@ -72,6 +78,9 @@ def test_delete_binary():
     print("\nresponse------------------------>" + response.text)
 
 
+log_text_file = '/cp.log'
+
+
 def test_create_log():
     # 返回接口响应结果
     url = "http://127.0.0.1:5000/logtextfile/create"
@@ -113,6 +122,9 @@ def test_delete_log():
     print("\nresponse------------------------>" + response.text)
 
 
+buffer_file = '/queue_cp'
+
+
 def test_create_buffer():
     # 返回接口响应结果
     url = "http://127.0.0.1:5000/bufferfile/create"
@@ -129,7 +141,7 @@ def test_add_buffer():
     url = "http://127.0.0.1:5000/bufferfile/add"
     payload = {
         "path": dir_path + buffer_file,
-        "element": "2"
+        "element": "3"
     }
     response = requests.post(url=url, json=payload)
     print("\nresponse------------------------>" + response.text)
@@ -153,10 +165,3 @@ def test_delete_buffer():
     }
     response = requests.delete(url=url, json=payload)
     print("\nresponse------------------------>" + response.text)
-
-
-# In assignment1, I used mac, here I used window11
-dir_path = 'D:/test_caopei'
-binary_file = '/cp.bin'
-log_text_file = '/cp.log'
-buffer_file = '/queue_cp'
